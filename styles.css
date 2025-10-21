@@ -1,0 +1,180 @@
+/* CSS 樣式 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 檔案上傳區塊 */
+.file-input-group {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#quiz-container {
+    margin-top: 20px;
+    display: none; /* 預設隱藏，直到載入數據 */
+}
+
+/* 題目樣式 */
+#question-header {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 題號連結樣式 */
+#current-q-link {
+    font-weight: bold;
+    color: #3498db; /* 藍色連結 */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* 跳轉控制項 */
+.jump-control {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.jump-control input {
+    width: 60px;
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.jump-control button {
+    padding: 6px 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+/* 題目文本 */
+#question-text {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    border-left: 5px solid #3498db;
+}
+
+/* 選項列表 */
+#options-list {
+    list-style: none;
+    padding: 0;
+}
+
+.option-item {
+    cursor: pointer;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    line-height: 1.5;
+}
+
+.option-item:hover {
+    background-color: #f9f9f9;
+}
+
+/* 選項狀態 */
+.option-item.selected {
+    background-color: #d9edf7;
+    border-color: #3498db;
+}
+
+/* 正確/錯誤答案回饋 */
+.option-item.correct {
+    background-color: #d4edda; /* 淺綠色 */
+    border-color: #28a745;
+    color: #155724;
+    font-weight: bold;
+}
+
+.option-item.wrong {
+    background-color: #f8d7da; /* 淺紅色 */
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+/* 導航與按鈕區塊 */
+.quiz-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#check-answer-btn {
+    background-color: #2ecc71;
+    color: white;
+    flex-grow: 1; /* 讓按鈕佔滿中間空間 */
+    margin: 0 10px;
+}
+
+#check-answer-btn:hover:not(:disabled) {
+    background-color: #27ae60;
+}
+
+.nav-btn {
+    background-color: #3498db;
+    color: white;
+    width: 120px;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

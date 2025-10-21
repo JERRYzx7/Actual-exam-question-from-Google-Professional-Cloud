@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>試題互動測驗</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>試題互動測驗</h1>
+        
+        <div class="file-input-group">
+            <input type="file" id="csv-file-input" accept=".csv" onchange="handleFileSelect(event)">
+            <p id="file-status">請上傳您的爬蟲 CSV 檔案。</p>
+        </div>
+
+        <div id="quiz-container">
+            <div id="question-header">
+                <div id="q-stats">
+                    題號: <a id="current-q-link" target="_blank">--</a> / 總題數: <span id="total-questions">--</span>
+                </div>
+                <div class="jump-control">
+                    <label for="jump-input">跳轉至題號:</label>
+                    <input type="text" id="jump-input" placeholder="e.g. 50">
+                    <button onclick="jumpToQuestionNumber()">跳轉</button>
+                </div>
+            </div>
+            
+            <div id="question-text">
+                請先上傳 CSV 檔案。
+            </div>
+
+            <ul id="options-list">
+                </ul>
+            
+            <div class="quiz-buttons">
+                <button id="prev-btn" class="nav-btn" onclick="navigate(-1)" disabled>上一題</button>
+                <button id="check-answer-btn" class="btn" onclick="checkAnswer()" disabled>檢查答案</button>
+                <button id="next-btn" class="nav-btn" onclick="navigate(1)" disabled>下一題</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
